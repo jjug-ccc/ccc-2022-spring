@@ -14,7 +14,7 @@ const Footer : React.FC = () => (
             <a className="pr-3" href={LINK.twitter}  target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} size="lg"/></a>
           </div>
           <div className="column content has-text-right-desktop">
-            <p>Copyright © 2007-2021 JJUG - All rights reserved.</p>
+            <p>Copyright © 2007-2022 JJUG - All rights reserved.</p>
           </div>
         </div>
       </div>

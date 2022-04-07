@@ -25,7 +25,7 @@ const App : React.FC = () => {
             <div className="columns">
               <div className="column">
                 <div className="section">
-                  <h1 className="title is-size-4-mobile">JJUG CCC 2021 Fall</h1>
+                  <h1 className="title is-size-4-mobile">JJUG CCC 2022 Spring</h1>
                 </div>
               </div>
             </div>
