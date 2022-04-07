@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "registerBtn": "登録"
+  },
+  "contentTitle": {
+    "description": "開催概要",
+    "aboutJjug": "JJUGについて",
+    "sponsor": "スポンサー"
+  },
+  "description": {
+    "text": "JJUG CCCは日本最大のJavaコミュニティイベントです。Java関連の技術や事例に関する良質なセッションが行われ、また異なる分野で活躍するJava技術者が一堂に会する場ともなっています。オンラインでの開催になります。",
+    "title": {
+      "organizer": "主催",
+      "date": "開催日時",
+      "participationFee": "参加費",
+      "schedule": "スケジュール",
+      "hashtag": "ハッシュタグ",
+      "sessions": "セッション一覧"
+    },
+    "data": {
+      "organizer": "日本Javaユーザグループ",
+      "date": "2021年11月21日（日）",
+      "participationFee": "無料",
+      "hashtag": "セッションごとのハッシュタグあり"
+    }
+  },
+  "about": {
+    "text1": "日本Javaユーザーグループ（Japan Java User Group/JJUG）は10000人以上の Javaエンジニアが参加する日本最大のJavaコミュニティです。以下のような活動を行っています。",
+    "text2": ["詳しくはJJUGの", "オフィシャルサイト", "や", "コミュニティページ（DoorKeeper）", "を確認してください。"],
+    "title": {
+      "nightSeminar": "ナイトセミナー",
+      "jjugccc": "JJUG CCC",
+      "instructorDispatch": "地方講師派遣",
+      "internationalConferences": "国際会議参加"
+    },
+    "data": {
+      "nightSeminar": "毎月1回夜に開催する勉強会",
+      "jjugccc": "年2回（春と秋）に開催する1日カンファレンス",
+      "instructorDispatch": "地方Javaコミュニティへの講師派遣",
+      "internationalConferences": "世界中のJUGとの交流"
+    }
+  }
+}

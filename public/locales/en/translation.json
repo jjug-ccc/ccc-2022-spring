@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "registerBtn": "Register"
+  },
+  "contentTitle": {
+    "description": "Description",
+    "aboutJjug": "About JJUG",
+    "sponsor": "Sponsors"
+  },
+  "description": {
+    "text": "JJUG CCC is the largest Java community event organized by Japan Java User Group (JJUG). It provides great sessions of Java-related technologies and practices, and brings together Java engineers from different disciplines.This conference will be held online.",
+    "title": {
+      "organizer": "Organizer",
+      "date": "Date",
+      "participationFee": "Participation Fee",
+      "schedule": "Schedule",
+      "hashtag": "Hashtag",
+      "sessions": "Sessions"
+    },
+    "data": {
+      "organizer": "Japan Java User Group",
+      "date": "21th Nov. 2021 (Sun)",
+      "participationFee": "Free",
+      "hashtag": "We will also use separate hashtags for each session"
+    }
+  },
+  "about": {
+    "text1": "The Japan Java User Group (JJUG) is the largest Java community in Japan with over 10000 Java engineers. The following activities are conducted.",
+    "text2": ["Please check JJUG ", "official website", " and ", "community page (DoorKeeper)", " for more detail information."],
+    "title": {
+      "nightSeminar": "Night Seminar",
+      "jjugccc": "JJUG CCC",
+      "instructorDispatch": "Instructor Dispatch",
+      "internationalConferences": "Participation in international conferences"
+    },
+    "data": {
+      "nightSeminar": "Seminar held once a month",
+      "jjugccc": "Full-day conference held twice a year (Spring and Autumn)",
+      "instructorDispatch": "Dispatch of instructors to local Java communities in Japan",
+      "internationalConferences": "Making a relationship with international Java Communities"
+    }
+  }
+}
