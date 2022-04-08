@@ -16,7 +16,7 @@ export const SPONSORS = new Map<
           // { image: 'aws.png', alt: 'アマゾン ウェブ サービス ジャパン合同会社', url: 'https://aws.amazon.com/jp/' },
           { image: 'gmo_internet_group.png', alt: 'GMOインターネットグループ', url: 'https://developers.gmo.jp/' },
           // { image: 'yahoo_japan.png', alt: 'ヤフー株式会社', url: 'https://about.yahoo.co.jp' },
-          // { image: 'recruit.png', alt: '株式会社リクルート', url: 'https://recruit-saiyo.jp' },
+          { image: 'recruit.png', alt: '株式会社リクルート', url: 'https://recruit-saiyo.jp' },
           // { image: 'techmatrix.png', alt: 'テクマトリックス株式会社', url: 'https://www.techmatrix.co.jp/index.html' }
       ]
     ],
