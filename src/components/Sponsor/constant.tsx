@@ -6,7 +6,7 @@ export const SPONSORS = new Map<
 >([
     [ 'Session',
       [
-          { image: 'microsoft.png', alt: '日本マイクロソフト株式会社', url: 'https://azure.microsoft.com/ja-jp/developer/' },
+          { image: 'microsoft.png', alt: '日本マイクロソフト株式会社', url: '' },
           { image: 'redhat.png', alt: 'レッドハット株式会社', url: 'https://www.redhat.com/ja/global/japan' },
           { image: 'cdata.png', alt: 'CData Software Japan 合同会社', url: 'https://www.cdata.com/jp/' },
           { image: 'line.png', alt: 'LINE株式会社', url: 'https://engineering.linecorp.com/ja/' },
