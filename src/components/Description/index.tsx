@@ -18,6 +18,8 @@ const Description : React.FC = () => {
       <dd>{t("description.data.participationFee")}</dd>
       <dt>{t("description.title.hashtag")}</dt>
       <dd><a href="https://twitter.com/search?q=%23jjug_ccc" target="blank" rel="noopener">#jjug_ccc</a>（{t("description.data.hashtag")}）</dd>
+      <dt>{t("description.title.sessions")}</dt>
+      <dd><a href="https://fortee.jp/jjug-ccc-2022-spring/proposal" target="_blank" rel="noopener noreferrer">https://fortee.jp/jjug-ccc-2022-spring/proposal</a></dd>
     </dl>
   </div>
 };
