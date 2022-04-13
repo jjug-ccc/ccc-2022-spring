@@ -6,11 +6,11 @@ export const SPONSORS = new Map<
 >([
     [ 'Session',
       [
-          { image: 'microsoft.png', alt: '日本マイクロソフト株式会社', url: '' },
+          // { image: 'microsoft.png', alt: '日本マイクロソフト株式会社', url: '' },
           { image: 'redhat.png', alt: 'レッドハット株式会社', url: 'https://www.redhat.com/ja/global/japan' },
           { image: 'cdata.png', alt: 'CData Software Japan 合同会社', url: 'https://www.cdata.com/jp/' },
           { image: 'line.png', alt: 'LINE株式会社', url: 'https://engineering.linecorp.com/ja/' },
-          { image: 'simplex.png', alt: 'シンプレクス株式会社', url: 'https://www.simplex.inc/ ' },
+          // { image: 'simplex.png', alt: 'シンプレクス株式会社', url: 'https://www.simplex.inc/ ' },
           { image: 'ulsystems.png', alt: 'ウルシステムズ株式会社', url: 'https://www.ulsystems.co.jp/' },
           { image: 'pingcap.png', alt: 'PingCAP株式会社', url: 'https://pingcap.co.jp/?utm_source=jjug_2022&utm_medium=event' },
           // { image: 'aws.png', alt: 'アマゾン ウェブ サービス ジャパン合同会社', url: 'https://aws.amazon.com/jp/builders-flash/?&sc_channel=el&sc_campaign=builders_flash&sc_geo=japn&sc_content=el_jjug2022_jp&sc_country=jp&sc_outcome=reg&trkCampaign=builders_flash&trk=el_jjug2022_jp&awsf.filter-name=*all' },
