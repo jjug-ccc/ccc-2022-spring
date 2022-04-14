@@ -15,7 +15,8 @@
       "participationFee": "参加費",
       "schedule": "スケジュール",
       "hashtag": "ハッシュタグ",
-      "sessions": "セッション一覧"
+      "sessions": "セッション一覧",
+      "participationRegister": "参加登録"
     },
     "data": {
       "organizer": "日本Javaユーザグループ",

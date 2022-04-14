@@ -20,6 +20,8 @@ const Description : React.FC = () => {
       <dd><a href="https://twitter.com/search?q=%23jjug_ccc" target="blank" rel="noopener">#jjug_ccc</a>（{t("description.data.hashtag")}）</dd>
       <dt>{t("description.title.sessions")}</dt>
       <dd><a href="https://fortee.jp/jjug-ccc-2022-spring/proposal" target="_blank" rel="noopener noreferrer">https://fortee.jp/jjug-ccc-2022-spring/proposal</a></dd>
+      <dt>{t("description.title.participationRegister")}</dt>
+      <dd><a href="https://jjug.doorkeeper.jp/events/135612" target="_blank" rel="noopener noreferrer">https://jjug.doorkeeper.jp/events/135612</a></dd>
     </dl>
   </div>
 };

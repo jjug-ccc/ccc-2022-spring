@@ -15,7 +15,8 @@
       "participationFee": "Participation Fee",
       "schedule": "Schedule",
       "hashtag": "Hashtag",
-      "sessions": "Sessions"
+      "sessions": "Sessions",
+      "participationRegister": "Register for participation"
     },
     "data": {
       "organizer": "Japan Java User Group",
