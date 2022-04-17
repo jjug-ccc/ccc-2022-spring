@@ -22,13 +22,13 @@ const Sponsor: React.FC<SponsorProps> = ({sponsorType}) => {
   let sizeClass: string;
   switch (sponsorType) {
     case "Session":
-      sizeClass = "image is-170x170";
+      sizeClass = "image is-176x176";
       break;
     case "Cm":
-      sizeClass = "image is-160x160";
+      sizeClass = "image is-128x128";
       break;
     case "Logo":
-      sizeClass = "image is-128x128";
+      sizeClass = "image is-96x96";
       break;
   }
 
