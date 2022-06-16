@@ -41,7 +41,7 @@ TableData.defaultProps = {
 };
 
 type TableHeaderProps = {
-    title: string,
+    trackCode: string,
 }
 
 const TableHeader : React.FC<TableHeaderProps> = (props) => {
@@ -51,7 +51,7 @@ const TableHeader : React.FC<TableHeaderProps> = (props) => {
                 <span className="icon is-small">
                     <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                 </span>
-                <span>{props.title}</span>
+                <span>Track {props.trackCode.toUpperCase()} (#jjug_ccc_{props.trackCode})</span>
             </button>
         </th>
     );
@@ -62,10 +62,10 @@ const TimeTable : React.FC = () => {
         <table className="table">
             <thead>
             <tr>
-                <TableHeader title={'Track A (#jjug_ccc_a)'}/>
-                <TableHeader title={'Track B (#jjug_ccc_b)'}/>
-                <TableHeader title={'Track C (#jjug_ccc_c)'}/>
-                <TableHeader title={'Track D (#jjug_ccc_d)'}/>
+                <TableHeader trackCode={'a'}/>
+                <TableHeader trackCode={'b'}/>
+                <TableHeader trackCode={'c'}/>
+                <TableHeader trackCode={'d'}/>
             </tr>
             </thead>
             <tbody>
