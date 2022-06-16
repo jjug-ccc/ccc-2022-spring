@@ -47,7 +47,7 @@ type TableHeaderProps = {
 const TableHeader : React.FC<TableHeaderProps> = (props) => {
     return (
         <th>
-            <button className="button is-dark">
+            <button className="button is-dark" onClick={() => props.trackCode}>
                 <span className="icon is-small">
                     <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                 </span>
@@ -57,7 +57,11 @@ const TableHeader : React.FC<TableHeaderProps> = (props) => {
     );
 }
 
-const TimeTable : React.FC = () => {
+export type TrackCodeProps = {
+    getTrackCode: Function,
+}
+
+const TimeTable : React.FC<TrackCodeProps> = (props) => {
     return (
         <table className="table">
             <thead>

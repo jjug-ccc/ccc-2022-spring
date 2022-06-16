@@ -16,6 +16,10 @@ export type MovieProps = {
     embedDomain?: string,
 }
 
+function getTrackCode() {
+
+}
+
 const Preview: React.FC = () => {
     const [error, setError] = useState(null);
     const [trackA, setTrackA] = useState("");
@@ -26,6 +30,7 @@ const Preview: React.FC = () => {
     const [sessionFormLink, setSessionFormLink] = useState("");
     const [eventFormLink, setEventFormLink] = useState("");
     const [embedDomain, setEmbedDomain] = useState("");
+    const [trackCode, setTrackCode] = useState("");
 
     useEffect(() => {
         const url = 'https://dl.dropboxusercontent.com/s/fji392ldfqhr3j1/jjug_2022_viewer.json';
