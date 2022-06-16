@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/23b8b463e1.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <title>JJUG CCC 2022 Spring - Streaming View</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row pt-3">
+      <div class="col-auto mx-auto">
+        <img class="d-block mx-auto" src="https://www.java-users.jp/img/jjug-rectangle.png">
+        <p class="h5">JJUG CCC 2022 Spring 視聴ページ</p>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-lg-9">
+        <div class="ratio ratio-16x9">
+          <div id="player-view-load"><i class="fa-solid fa-spinner fa-3x fa-spin"></i></div>
+          <iframe id="player-view" style="display: none;" src="" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="col-lg-3 d-none d-md-block">
+        <div id="chat-view-load"><i class="fa-solid fa-spinner fa-3x fa-spin"></i></div>
+        <iframe id="chat-view" style="display: none;" width="100%" height="100%" frameborder="0" src=""
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="row pt-2 mx-1">
+      <div class="col p-2 bg-primary text-white">
+        <div class="row">
+          <div class="col mx-auto text-center">
+            <span class="fw-bold">アンカンファレンス会場</span>
+          </div>
+        </div>
+        <div class="row pt-2">
+          <div class="col mx-auto d-grid gap-2">
+            <a id="unconference_link" class="btn btn-light" role="button" href="#" target="_blank"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span class="fw-bold">参加する <span class="small">(Zoomが起動します)</span></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-2 mx-1">
+      <div class="col p-2 bg-danger text-white">
+        <div class="row">
+          <div class="col mx-auto text-center">
+            <i class="fa-solid fa-clipboard"></i> <span class="fw-bold">アンケートにご協力ください</span>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col mx-auto d-grid gap-2">
+            <a id="session_form_link" class="btn btn-light" role="button" href="#" target="_blank"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span class="fw-bold">セッションへの感想はこちら</span></a>
+          </div>
+          <div class="col mx-auto d-grid gap-2">
+            <a id="event_form_link" class="btn btn-light" role="button" href="#" target="_blank"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span class="fw-bold">イベントへの感想はこちら</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-5">
+      <div class="col-auto mx-auto">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center" style="width: 15%"><button id="track-a" type="button" class="btn btn-dark"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to play"><i
+                      class="fa-solid fa-circle-play fa-1x fa-fade" style="color: white;"></i> Track A <span
+                      class="small">(#jjug_ccc_a)</span></button></th>
+                <th class="text-center" style="width: 15%"><button id="track-b" type="button" class="btn btn-dark"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to play"><i
+                      class="fa-solid fa-circle-play fa-1x fa-fade" style="color: white;"></i> Track B <span
+                      class="small">(#jjug_ccc_b)</span></button></th>
+                <th class="text-center" style="width: 15%"><button id="track-c" type="button" class="btn btn-dark"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to play"><i
+                      class="fa-solid fa-circle-play fa-1x fa-fade" style="color: white;"></i> Track C <span
+                      class="small">(#jjug_ccc_c)</span></button></th>
+                <th class="text-center" style="width: 15%"><button id="track-d" type="button" class="btn btn-dark"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to play"><i
+                      class="fa-solid fa-circle-play fa-1x fa-fade" style="color: white;"></i> Track D <span
+                      class="small">(#jjug_ccc_d)</span></button></th>
+              </tr>
+            </thead>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:00〜10:25</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/c966194c-c7d5-43c2-a65e-5d8f4ac94cf2"
+                  target="_blank" class="link-dark">
+                  <span class="small">JUnitで闘うレガシーコード改善</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:00〜10:25</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/fbb1e886-d51a-4052-b284-6e9c80f132ea"
+                  target="_blank" class="link-dark">ß
+                  <span class="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:00〜10:25</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/153b87bf-85c4-4274-9954-4e3f614724cb"
+                  target="_blank" class="link-dark">
+                  <span class="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span>
+                </a>
+              </td>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:00〜10:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/3bf78003-4672-457c-a8fc-47adb4a1812e"
+                  target="_blank" class="link-dark">
+                  <span class="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:25〜10:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/83759ca2-1230-413f-817f-3a9d99fc8e2a"
+                  target="_blank" class="link-dark">
+                  <span class="small">Testcontainersでコンテナを使ったテストを実行しよう</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:25〜10:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/afd5d809-a47b-4932-b31d-aebab30c2e29"
+                  target="_blank" class="link-dark">
+                  <span class="small">Spring Boot と WebRTC を用いた Web 会議システムの開発</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">10:25〜10:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/0c85f6b2-d44d-40c2-8e6d-ddc1fe821273"
+                  target="_blank" class="link-dark">
+                  <span class="small">Java で作るカスタム GitHub Actions</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">11:00〜11:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/f62f3b34-2318-4a1a-adec-ea7ed35825e1"
+                  target="_blank" class="link-dark">
+                  <span class="small">クラウドネイティブ環境におけるJavaチューニングの進め方 - 超PayPay祭の事例</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">11:00〜11:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/dc6c1fa2-9b64-4cdb-a602-30d535c9849f"
+                  target="_blank" class="link-dark">
+                  <span class="small">クレジットカード決済システムをJavaで構築して10年間運用した話</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">11:00〜11:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/620b5a5a-ced8-417d-bd0f-c1a68baa3c97"
+                  target="_blank" class="link-dark">
+                  <span class="small">k8s 疲れの方へ送る、k8s ベースのらくらくマイクロサービス動作基盤のご紹介〜 Dapr ベースのマイクロサービス開発から GitHub Action
+                    を利用した
+                    CI/CD 〜</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">11:00〜11:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/6964800f-b92c-47a6-b161-d6bf8884b02c"
+                  target="_blank" class="link-dark">
+                  <span class="small">「サポート」は製品開発？　- JDBCライブラリ屋さんが実践する攻めのテクニカルサポートとJavaエンジニアのキャリアについて -</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">12:30〜13:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/c50104bb-a6ae-4077-8ac3-cce2f65207b3"
+                  target="_blank" class="link-dark">
+                  <span class="small">JDK Flight Recorder入門</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">12:30〜12:55</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/4177bd7c-c165-4890-9264-0b66d28ba81c"
+                  target="_blank" class="link-dark">
+                  <span class="small">ライブコーディングで学ぶKotlinチュートリアル</span>
+                </a>
+              </td>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">12:30〜13:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/9b96614f-c605-45cd-8307-a800c84519ca"
+                  target="_blank" class="link-dark">
+                  <span class="small">Java初心者が知っておくべきプログラミングのこと</span>
+                </a>
+              </td>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">12:30〜13:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/6c20efbc-35c9-44a8-add8-7c35cfead995"
+                  target="_blank" class="link-dark">
+                  <span class="small">Lauchableで僕が学んだ働き方 〜リモートワークで会社もプロダクトも１から作る経験〜</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">12:55〜13:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/355ae050-d7e6-494b-b7a6-c30a4f42d97b"
+                  target="_blank" class="link-dark">
+                  <span class="small">RabbitMQを用いたイベント駆動アーキテクチャの紹介</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">13:30〜14:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/7583d339-9e53-4726-9ecd-617e43c540ef"
+                  target="_blank" class="link-dark">
+                  <span class="small">Java アプリとAWS の良い関係 - AWS でJava アプリを実行する一番簡単な方法教えます</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">13:30〜14:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/c92a5edb-8cb0-4355-98f5-44fc6acad5b6"
+                  target="_blank" class="link-dark">
+                  <span class="small">分散データベースTiDB Cloudで構築するWebアプリケーション</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">13:30〜14:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/ebb99b9d-75dc-4816-a321-00e98602d78a"
+                  target="_blank" class="link-dark">
+                  <span class="small">Azure Pipelinesを使って学んだ CI/CD環境のあれこれ</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">13:30〜14:20</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/8d2025e5-ce24-4d5f-8157-76d8c652a8a7"
+                  target="_blank" class="link-dark">
+                  <span class="small">保険基幹システムのアーキテクチャ : シンプレクスの技術的チャレンジ</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">15:00〜15:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/b15d6b6f-d9e1-44b8-91f2-1e4779620c75"
+                  target="_blank" class="link-dark">
+                  <span class="small">パターンマッチングを学んで新しいJavaの世界へ！Java 18までの目玉機能をおさらいしよう</span>
+                </a>
+              </td>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">15:00〜15:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/4152bc33-c3f3-4041-9c3e-3056d82dd51c"
+                  target="_blank" class="link-dark">
+                  <span class="small">JUnit5.7, 5.8の新機能紹介</span>
+                </a>
+              </td>
+              <td rowspan="2">
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">15:00〜15:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/c74c869a-b0ac-4cde-a22f-3c2592b68744"
+                  target="_blank" class="link-dark">
+                  <span class="small">RDRA + JavaによるレジャーSaaSプロダクトの要件定義と実装のシームレスな接続</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">15:00〜15:25</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/e60f67fe-a543-457d-adfc-75354b677dc9"
+                  target="_blank" class="link-dark">
+                  <span class="small">脱二重メンテナンス！ドキュメント自動生成への道</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">15:25〜15:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/78f6603d-eeea-4066-afdd-fc605bdd358e"
+                  target="_blank" class="link-dark">
+                  <span class="small">Javaのビルドやバージョンの違いをグラフデータベースで理解する。移行で困らないための知識グラフを作ろう。</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <tr>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">16:00〜16:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/ed94e838-99c6-479b-95de-2f9eec4217b3"
+                  target="_blank" class="link-dark">
+                  <span class="small">Javaの認証認可基盤のKeycloak(Red Hat Single Sign-on)</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">16:00〜16:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/730d46e2-a295-45c2-abfa-bb7bf13ad7c9"
+                  target="_blank" class="link-dark">
+                  <span class="small">LINEのB2Bプラットフォームにおけるトラブルシューティング２選</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">16:00〜16:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/e74451d7-1b81-4248-a772-b5250f2743d8"
+                  target="_blank" class="link-dark">
+                  <span class="small">連続画像処理による位置情報計算を支えるマイクロサービスアーキテクチャ</span>
+                </a>
+              </td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">16:00〜16:50</span><br />
+                <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/8f069afd-0230-404e-ab5e-23d04437597c"
+                  target="_blank" class="link-dark">
+                  <span class="small">スナップショットログを用いた自動E2Eテストの導入</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+              <td><span class="small">休憩</span></td>
+            </tr>
+            <td>
+              <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">17:00〜17:50</span><br />
+              <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/38436423-2235-4736-8ca5-783c8f227ea1"
+                target="_blank" class="link-dark">
+                <span class="small">バイトコードって言葉をよく目にするけど一体何なんだろう？ </span>
+              </a>
+            </td>
+            <td>
+              <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">17:00〜17:50</span><br />
+              <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/6631cbfb-8e73-4517-a3ff-23a9766546c9"
+                target="_blank" class="link-dark">
+                <span class="small">テストコードの注入から始めるレガシーコードのリファクタリング</span>
+              </a>
+            </td>
+            <td>
+              <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">17:00〜17:50</span><br />
+              <a href="https://fortee.jp/jjug-ccc-2022-spring/proposal/feef52a6-36a5-413f-a04c-5be783c635d7"
+                target="_blank" class="link-dark">
+                <span class="small">イベントソーシング入門 in Java――イベントストーミングから Akka persistence を使った CQRS+ES 実装まで</span>
+              </a>
+            </td>
+            <td>
+              <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">17:00〜17:50</span><br />
+              <span class="small">JJUGセッション</span>
+            </td>
+            </tr>
+            <tr>
+              <td><span class="small">全セッション終了</span></td>
+              <td><span class="small">全セッション終了</span></td>
+              <td><span class="small">全セッション終了</span></td>
+              <td>
+                <i class="fa-solid fa-clock fa-sm"></i> <span class="fw-lighter small">17:50〜18:00</span><br />
+                <span class="small">クロージング</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        const url = 'https://dl.dropboxusercontent.com/s/fji392ldfqhr3j1/jjug_2022_viewer.json';
+
+        let track_a_source, track_b_source, track_c_source, track_d_source = "";
+        let track_a_chat_source, track_b_chat_source, track_c_chat_source, track_d_chat_source = "";
+        let embed_domain, unconference_link, form_link = "";
+
+        fetch(url, { method: "GET", mode: "cors" })
+          .then(response => response.json())
+          .then(data => {
+            embed_domain = data["embed_domain"];
+
+            track_a_source = "https://www.youtube.com/embed/" + data["track_a"]["live_id"];
+            track_b_source = "https://www.youtube.com/embed/" + data["track_b"]["live_id"];
+            track_c_source = "https://www.youtube.com/embed/" + data["track_c"]["live_id"];
+            track_d_source = "https://www.youtube.com/embed/" + data["track_d"]["live_id"];
+
+            track_a_chat_source = "https://www.youtube.com/live_chat?v=" + data["track_a"]["live_id"] + "&embed_domain=" + embed_domain;
+            track_b_chat_source = "https://www.youtube.com/live_chat?v=" + data["track_b"]["live_id"] + "&embed_domain=" + embed_domain;
+            track_c_chat_source = "https://www.youtube.com/live_chat?v=" + data["track_c"]["live_id"] + "&embed_domain=" + embed_domain;
+            track_d_chat_source = "https://www.youtube.com/live_chat?v=" + data["track_d"]["live_id"] + "&embed_domain=" + embed_domain;
+
+            unconference_link = data["unconference_link"];
+            session_form_link = data["session_form_link"];
+            event_form_link = data["event_form_link"];
+
+            $("#player-view").attr("src", track_a_source);
+            $("#player-view-load").hide();
+            $("#player-view").show();
+            $("#chat-view").attr("src", track_a_chat_source);
+            $("#chat-view-load").hide();
+            $("#chat-view").show();
+            $("#unconference_link").attr("href", unconference_link);
+            $("#session_form_link").attr("href", session_form_link);
+            $("#event_form_link").attr("href", event_form_link);
+
+            $("#track-a").click(function () {
+              if ($("#player-view").attr("src") != track_a_source) {
+                $("#player-view").attr("src", track_a_source);
+                $("#chat-view").attr("src", track_a_chat_source);
+              }
+            });
+            $("#track-b").click(function () {
+              if ($("#player-view").attr("src") != track_b_source) {
+                $("#player-view").attr("src", track_b_source);
+                $("#chat-view").attr("src", track_b_chat_source);
+              }
+            });
+            $("#track-c").click(function () {
+              if ($("#player-view").attr("src") != track_c_source) {
+                $("#player-view").attr("src", track_c_source);
+                $("#chat-view").attr("src", track_c_chat_source);
+              }
+            });
+            $("#track-d").click(function () {
+              if ($("#player-view").attr("src") != track_d_source) {
+                $("#player-view").attr("src", track_d_source);
+                $("#chat-view").attr("src", track_d_chat_source);
+              }
+            });
+          })
+          .catch(err => {
+            console.error(err)
+          });
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+      });
+    </script>
+</body>
+
+</html>
