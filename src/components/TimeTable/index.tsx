@@ -167,7 +167,12 @@ const TimeTable : React.FC = () => {
                 />
             </tr>
             <tr>
-                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData
+                    title={'RabbitMQを用いたイベント駆動アーキテクチャの紹介'}
+                    proposalId={'355ae050-d7e6-494b-b7a6-c30a4f42d97b'}
+                    startTime={'12:55'}
+                    endTime={'13:20'}
+                />
             </tr>
             <tr>
                 <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
