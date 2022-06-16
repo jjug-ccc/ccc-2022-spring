@@ -5,12 +5,19 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 type TableDataProps = {
     title: string,
     proposalId?: string,
-    startTime: string,
-    endTime: string,
+    startTime?: string,
+    endTime?: string,
     rowSpan?: number,
 }
 
 const TableData : React.FC<TableDataProps> = (props) => {
+    if (props.startTime == undefined || props.endTime == undefined) {
+        return (
+            <td rowSpan={props.rowSpan}>
+                <span className="small">{props.title}</span>
+            </td>
+        );
+    }
     if (props.proposalId == undefined) {
         return (
             <td rowSpan={props.rowSpan}>
@@ -99,82 +106,102 @@ const TimeTable : React.FC = () => {
                 <TableData title={'休憩'} startTime={'10:50'} endTime={'11:00'} />
             </tr>
             <tr>
-                <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
+                <TableData
+                    title={'クラウドネイティブ環境におけるJavaチューニングの進め方 - 超PayPay祭の事例'}
+                    proposalId={'f62f3b34-2318-4a1a-adec-ea7ed35825e1'}
+                    startTime={'11:00'}
+                    endTime={'11:50'}
+                />
+                <TableData
+                    title={'クレジットカード決済システムをJavaで構築して10年間運用した話'}
+                    proposalId={'dc6c1fa2-9b64-4cdb-a602-30d535c9849f'}
+                    startTime={'11:00'}
+                    endTime={'11:50'}
+                />
+                <TableData
+                    title={'k8s 疲れの方へ送る、k8s ベースのらくらくマイクロサービス動作基盤のご紹介〜 Dapr ベースのマイクロサービス開発から GitHub Action を利用した CI/CD 〜'}
+                    proposalId={'620b5a5a-ced8-417d-bd0f-c1a68baa3c97'}
+                    startTime={'11:00'}
+                    endTime={'11:50'}
+                />
+                <TableData
+                    title={'「サポート」は製品開発？　- JDBCライブラリ屋さんが実践する攻めのテクニカルサポートとJavaエンジニアのキャリアについて -'}
+                    proposalId={'6964800f-b92c-47a6-b161-d6bf8884b02c'}
+                    startTime={'11:00'}
+                    endTime={'11:50'}
+                />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             <tr>
-                <td rowSpan={2}><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td rowSpan={2}><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td rowSpan={2}><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
             </tr>
             <tr>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             <tr>
-                <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             <tr>
-                <td rowSpan={2}><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td rowSpan={2}><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
-                <td rowSpan={2}><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} rowSpan={2} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             <tr>
-                <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
+                <TableData title={'休憩'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             <tr>
-                <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
-                <td><span className="small">サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話</span></td>
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
+                <TableData title={''} proposalId={''} startTime={''} endTime={''} />
             </tr>
             <tr>
-                <td><span className="small">全セッション終了</span></td>
-                <td><span className="small">全セッション終了</span></td>
-                <td><span className="small">全セッション終了</span></td>
-                <td><span className="small">クロージング</span></td>
+                <TableData title={''} />
+                <TableData title={''} />
+                <TableData title={''} />
+                <TableData title={'クロージング'} startTime={'11:50'} endTime={'12:30'} />
             </tr>
             </tbody>
         </table>
