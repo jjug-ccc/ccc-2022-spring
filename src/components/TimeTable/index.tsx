@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import {MovieProps} from "../Preview";
+import { faClock, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 type TableDataProps = {
     title: string,
@@ -41,15 +40,32 @@ TableData.defaultProps = {
     rowSpan: 1
 };
 
+type TableHeaderProps = {
+    title: string,
+}
+
+const TableHeader : React.FC<TableHeaderProps> = (props) => {
+    return (
+        <th>
+            <button className="button is-dark">
+                <span className="icon is-small">
+                    <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
+                </span>
+                <span>{props.title}</span>
+            </button>
+        </th>
+    );
+}
+
 const TimeTable : React.FC = () => {
     return (
         <table className="table">
             <thead>
             <tr>
-                <th>Track A</th>
-                <th>Track B</th>
-                <th>Track C</th>
-                <th>Track D</th>
+                <TableHeader title={'Track A (#jjug_ccc_a)'}/>
+                <TableHeader title={'Track B (#jjug_ccc_b)'}/>
+                <TableHeader title={'Track C (#jjug_ccc_c)'}/>
+                <TableHeader title={'Track D (#jjug_ccc_d)'}/>
             </tr>
             </thead>
             <tbody>
