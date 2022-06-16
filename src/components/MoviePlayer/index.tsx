@@ -1,6 +1,7 @@
 import React from 'react';
+import {MovieProps} from "../Preview";
 
-const MoviePlayer : React.FC = () => {
+const MoviePlayer : React.FC<MovieProps> = (props) => {
     return (
         <div className="container">
             <div className="columns">
