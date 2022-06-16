@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import NavBar from '../NavBar';
 import SEO from '../SEO';
+import MoviePlayer from "../MoviePlayer";
 
 const Preview: React.FC = () => {
     return (
@@ -10,7 +11,7 @@ const Preview: React.FC = () => {
             <NavBar/>
             <div className="section">
                 <div className="container">
-                    <p>test</p>
+                    <MoviePlayer />
                 </div>
             </div>
         </div>
