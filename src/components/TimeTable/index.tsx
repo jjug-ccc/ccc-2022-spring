@@ -4,13 +4,22 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 type TableDataProps = {
     title: string,
-    proposalId: string,
+    proposalId?: string,
     startTime: string,
     endTime: string,
     rowSpan?: number,
 }
 
 const TableData : React.FC<TableDataProps> = (props) => {
+    if (props.proposalId == undefined) {
+        return (
+            <td rowSpan={props.rowSpan}>
+                <i><FontAwesomeIcon icon={faClock} size="sm"/></i> <span className="fw-lighter small">{props.startTime}〜{props.endTime}</span><br/>
+                <span className="small">{props.title}</span>
+            </td>
+        );
+    }
+
     return (
         <td rowSpan={props.rowSpan}>
             <i><FontAwesomeIcon icon={faClock} size="sm"/></i> <span className="fw-lighter small">{props.startTime}〜{props.endTime}</span><br/>
@@ -70,15 +79,24 @@ const TimeTable : React.FC = () => {
                     startTime={'10:25'}
                     endTime={'10:50'}
                 />
-                <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
-                <td><span className="small">AWS Batch × Spring Batch でクラウド最適なバッチを構築した話</span></td>
-                <td><span className="small">開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する</span></td>
+                <TableData
+                    title={'Spring Boot と WebRTC を用いた Web 会議システムの開発'}
+                    proposalId={'afd5d809-a47b-4932-b31d-aebab30c2e29'}
+                    startTime={'10:25'}
+                    endTime={'10:50'}
+                />
+                <TableData
+                    title={'Java で作るカスタム GitHub Actions'}
+                    proposalId={'0c85f6b2-d44d-40c2-8e6d-ddc1fe821273'}
+                    startTime={'10:25'}
+                    endTime={'10:50'}
+                />
             </tr>
             <tr>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
-                <td><span className="small">休憩</span></td>
+                <TableData title={'休憩'} startTime={'10:50'} endTime={'11:00'} />
+                <TableData title={'休憩'} startTime={'10:50'} endTime={'11:00'} />
+                <TableData title={'休憩'} startTime={'10:50'} endTime={'11:00'} />
+                <TableData title={'休憩'} startTime={'10:50'} endTime={'11:00'} />
             </tr>
             <tr>
                 <td><span className="small">JUnitで闘うレガシーコード改善</span></td>
