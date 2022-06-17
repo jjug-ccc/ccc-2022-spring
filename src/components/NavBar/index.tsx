@@ -22,7 +22,7 @@ const NavBar : React.FC = () => {
                  className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
                  aria-label="menu"
                  aria-expanded="false"
-                 data-target="navbarBasicExample">
+                 data-target="navbarBasic">
                   <span aria-hidden="true"/>
                   <span aria-hidden="true"/>
                   <span aria-hidden="true"/>
