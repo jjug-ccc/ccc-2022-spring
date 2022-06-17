@@ -1,4 +1,4 @@
-import {faClock, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
+import {faClock, faPlayCircle, faArrowCircleUp} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useState} from 'react';
 import './styles.scss';
@@ -104,13 +104,25 @@ const Preview: React.FC = () => {
                     </div>
                     <div className="columns">
                         <div className="column">
-                            <div className="content">
-                                <div className="buttons">
-                                    <a className="button is-primary" href={unConferenceLink} target="_blank"
-                                       rel="noopener noreferrer">アンカンファレンス会場（Zoom）</a>
-                                    <a className="button is-link" href="#" target="_blank"
-                                       rel="noopener noreferrer">アンケート</a>
-                                </div>
+                            <div className="buttons">
+                                <a className="button is-primary" href={unConferenceLink} target="_blank" rel="noopener noreferrer">
+                                    <span className="icon is-small">
+                                        <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
+                                    </span>
+                                    <span>アンカンファレンス会場</span> <span className="small">（Zoomが起動します）</span>
+                                </a>
+                                <a className="button is-link" href={sessionFormLink} target="_blank" rel="noopener noreferrer">
+                                    <span className="icon is-small">
+                                        <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
+                                    </span>
+                                    <span>セッションへの感想はこちら</span>
+                                </a>
+                                <a className="button is-link" href={eventFormLink} target="_blank" rel="noopener noreferrer">
+                                    <span className="icon is-small">
+                                        <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
+                                    </span>
+                                    <span>イベントへの感想はこちら</span>
+                                </a>
                             </div>
                         </div>
                     </div>
