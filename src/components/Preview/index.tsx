@@ -97,7 +97,7 @@ const Preview: React.FC = () => {
                             <div className="column">
                                 <div className="content">
                                     <div className="buttons">
-                                        <a className="button is-primary" href="#" target="_blank" rel="noopener noreferrer">アンカンファレンス会場（Zoom）</a>
+                                        <a className="button is-primary" href={unConferenceLink} target="_blank" rel="noopener noreferrer">アンカンファレンス会場（Zoom）</a>
                                         <a className="button is-link" href="#" target="_blank" rel="noopener noreferrer">アンケート</a>
                                     </div>
                                 </div>
