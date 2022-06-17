@@ -1,7 +1,6 @@
 import {faClock, faPlayCircle, faArrowCircleUp} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useState} from 'react';
-import './styles.scss';
 import NavBar from '../NavBar';
 import SEO from '../SEO';
 
@@ -81,7 +80,7 @@ const Preview: React.FC = () => {
         <div className="Preview">
             <SEO/>
             <NavBar/>
-            <div className="section">
+            <section className="section">
                 <div className="container">
                     <div className="columns">
                         <div className="column is-three-quarters">
@@ -127,8 +126,8 @@ const Preview: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="section">
+            </section>
+            <section className="section">
                 <div className="container">
                     <table className="table">
                         <thead>
@@ -437,7 +436,7 @@ const Preview: React.FC = () => {
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </section>
         </div>
     )
 };
