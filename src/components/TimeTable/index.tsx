@@ -171,7 +171,7 @@ const TimeTable: React.FC = () => {
                                                 endTime={'10:25'}
                                             />
                                             <TableData
-                                                title={'ß AWS Batch × Spring Batch でクラウド最適なバッチを構築した話'}
+                                                title={'AWS Batch × Spring Batch でクラウド最適なバッチを構築した話'}
                                                 proposalId={'fbb1e886-d51a-4052-b284-6e9c80f132ea'}
                                                 startTime={'10:00'}
                                                 endTime={'10:25'}
