@@ -1,8 +1,6 @@
-import {faClock, faPlayCircle, faArrowCircleUp} from "@fortawesome/free-solid-svg-icons";
+import {faArrowCircleUp, faClock, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useState} from 'react';
-import NavBar from '../NavBar';
-import SEO from '../SEO';
 
 type TableDataProps = {
     title: string,
@@ -77,9 +75,7 @@ const Preview: React.FC = () => {
     }, []);
 
     return (
-        <div className="Preview">
-            <SEO/>
-            <NavBar/>
+        <>
             <section className="section">
                 <div className="container">
                     <div className="columns">
@@ -437,7 +433,7 @@ const Preview: React.FC = () => {
                     </table>
                 </div>
             </section>
-        </div>
+        </>
     )
 };
 
