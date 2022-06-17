@@ -130,33 +130,33 @@ const TimeTable: React.FC = () => {
                                         <tr>
                                             <th>
                                                 <button className="button is-dark" onClick={() => setTrackCode(trackA)} data-tooltip="Click to play" >
-                                        <span className="icon is-small">
-                                            <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
-                                        </span>
+                                                    <span className="icon is-small">
+                                                        <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
+                                                    </span>
                                                     <span>Track A (#jjug_ccc_a)</span>
                                                 </button>
                                             </th>
                                             <th>
                                                 <button className="button is-dark" onClick={() => setTrackCode(trackB)} data-tooltip="Click to play">
-                                        <span className="icon is-small">
-                                            <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
-                                        </span>
+                                                    <span className="icon is-small">
+                                                        <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
+                                                    </span>
                                                     <span>Track B (#jjug_ccc_b)</span>
                                                 </button>
                                             </th>
                                             <th>
                                                 <button className="button is-dark" onClick={() => setTrackCode(trackC)} data-tooltip="Click to play">
-                                        <span className="icon is-small">
-                                            <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
-                                        </span>
+                                                    <span className="icon is-small">
+                                                        <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
+                                                    </span>
                                                     <span>Track C (#jjug_ccc_c)</span>
                                                 </button>
                                             </th>
                                             <th>
                                                 <button className="button is-dark" onClick={() => setTrackCode(trackD)} data-tooltip="Click to play">
-                                        <span className="icon is-small">
-                                            <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
-                                        </span>
+                                                    <span className="icon is-small">
+                                                        <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
+                                                    </span>
                                                     <span>Track D (#jjug_ccc_d)</span>
                                                 </button>
                                             </th>
