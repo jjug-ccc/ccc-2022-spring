@@ -17,7 +17,7 @@ const App : React.FC = () => {
       <NavBar/>
         <Routes>
             <Route index element={<Home/>} />
-            <Route path="time-table" element={<TimeTable />} />
+            <Route path="viewer" element={<TimeTable />} />
         </Routes>
       <Footer/>
     </div>
