@@ -104,20 +104,20 @@ const Preview: React.FC = () => {
                     </div>
                     <div className="columns">
                         <div className="column">
-                            <div className="buttons">
+                            <div className="buttons is-centered">
                                 <a className="button is-primary" href={unConferenceLink} target="_blank" rel="noopener noreferrer">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
                                     </span>
                                     <span>アンカンファレンス会場</span> <span className="small">（Zoomが起動します）</span>
                                 </a>
-                                <a className="button is-link" href={sessionFormLink} target="_blank" rel="noopener noreferrer">
+                                <a className="button is-danger" href={sessionFormLink} target="_blank" rel="noopener noreferrer">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
                                     </span>
                                     <span>セッションへの感想はこちら</span>
                                 </a>
-                                <a className="button is-link" href={eventFormLink} target="_blank" rel="noopener noreferrer">
+                                <a className="button is-danger" href={eventFormLink} target="_blank" rel="noopener noreferrer">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faArrowCircleUp} size="sm"/></i>
                                     </span>
