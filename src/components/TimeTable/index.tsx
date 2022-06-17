@@ -129,7 +129,7 @@ const TimeTable: React.FC = () => {
                                         <thead>
                                         <tr>
                                             <th>
-                                                <button className="button is-dark" onClick={() => setTrackCode(trackA)} data-tooltip="Click to play" >
+                                                <button className="button is-dark has-tooltip-right" onClick={() => setTrackCode(trackA)} data-tooltip="Click to play" >
                                                     <span className="icon is-small">
                                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                                     </span>
@@ -137,7 +137,7 @@ const TimeTable: React.FC = () => {
                                                 </button>
                                             </th>
                                             <th>
-                                                <button className="button is-dark" onClick={() => setTrackCode(trackB)} data-tooltip="Click to play">
+                                                <button className="button is-dark has-tooltip-right" onClick={() => setTrackCode(trackB)} data-tooltip="Click to play">
                                                     <span className="icon is-small">
                                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                                     </span>
@@ -145,7 +145,7 @@ const TimeTable: React.FC = () => {
                                                 </button>
                                             </th>
                                             <th>
-                                                <button className="button is-dark" onClick={() => setTrackCode(trackC)} data-tooltip="Click to play">
+                                                <button className="button is-dark has-tooltip-right" onClick={() => setTrackCode(trackC)} data-tooltip="Click to play">
                                                     <span className="icon is-small">
                                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                                     </span>
@@ -153,7 +153,7 @@ const TimeTable: React.FC = () => {
                                                 </button>
                                             </th>
                                             <th>
-                                                <button className="button is-dark" onClick={() => setTrackCode(trackD)} data-tooltip="Click to play">
+                                                <button className="button is-dark has-tooltip-right" onClick={() => setTrackCode(trackD)} data-tooltip="Click to play">
                                                     <span className="icon is-small">
                                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                                     </span>
