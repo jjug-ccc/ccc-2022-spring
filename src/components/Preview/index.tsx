@@ -85,10 +85,17 @@ const Preview: React.FC = () => {
                 <div className="container">
                     <div className="container">
                         <div className="columns">
-                            <div className="column">
+                            <div className="column is-three-quarters">
                                 <div className="content">
                                     <figure className="image is-16by9">
                                         <iframe className="has-ratio" src={'https://www.youtube.com/embed/' + trackCode} frameBorder="0" allowFullScreen/>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div className="column">
+                                <div className="content">
+                                    <figure className="image">
+                                        <iframe className="has-ratio" width="100%" height="100%" src={'https://www.youtube.com/live_chat?v=' + trackCode + '&embed_domain=' + embedDomain} frameBorder="0" allowFullScreen/>
                                     </figure>
                                 </div>
                             </div>
