@@ -112,7 +112,7 @@ const Preview: React.FC = () => {
                         <thead>
                         <tr>
                             <th>
-                                <button className="button is-dark" onClick={() => setTrackCode(trackA)}>
+                                <button className="button is-dark" onClick={() => setTrackCode(trackA)} data-tooltip="Click to play" >
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                     </span>
@@ -120,7 +120,7 @@ const Preview: React.FC = () => {
                                 </button>
                             </th>
                             <th>
-                                <button className="button is-dark" onClick={() => setTrackCode(trackB)}>
+                                <button className="button is-dark" onClick={() => setTrackCode(trackB)} data-tooltip="Click to play">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                     </span>
@@ -128,7 +128,7 @@ const Preview: React.FC = () => {
                                 </button>
                             </th>
                             <th>
-                                <button className="button is-dark" onClick={() => setTrackCode(trackC)}>
+                                <button className="button is-dark" onClick={() => setTrackCode(trackC)} data-tooltip="Click to play">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                     </span>
@@ -136,7 +136,7 @@ const Preview: React.FC = () => {
                                 </button>
                             </th>
                             <th>
-                                <button className="button is-dark" onClick={() => setTrackCode(trackD)}>
+                                <button className="button is-dark" onClick={() => setTrackCode(trackD)} data-tooltip="Click to play">
                                     <span className="icon is-small">
                                         <i><FontAwesomeIcon icon={faPlayCircle} size="sm"/> </i>
                                     </span>
