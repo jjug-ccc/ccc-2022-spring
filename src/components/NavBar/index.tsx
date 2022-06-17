@@ -28,11 +28,11 @@ const NavBar : React.FC = () => {
                   <span aria-hidden="true"/>
               </a>
           </div>
-          <div id="navbarBasic" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-              <div className="navbar-start">
-                  <Link className="navbar-item" to="/viewer">視聴</Link>
-              </div>
-          </div>
+          {/*<div id="navbarBasic" className={`navbar-menu ${isActive ? "is-active" : ""}`}>*/}
+          {/*    <div className="navbar-start">*/}
+          {/*        <Link className="navbar-item" to="/viewer">視聴</Link>*/}
+          {/*    </div>*/}
+          {/*</div>*/}
       </nav>
   );
 };
