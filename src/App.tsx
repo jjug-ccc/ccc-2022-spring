@@ -5,7 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import Footer from './components/Footer';
 import Home from "./components/Home";
 import NavBar from './components/NavBar';
-import Preview from "./components/Preview";
+import TimeTable from "./components/TimeTable";
 import SEO from './components/SEO';
 
 import './i18n';
@@ -17,7 +17,7 @@ const App : React.FC = () => {
       <NavBar/>
         <Routes>
             <Route index element={<Home/>} />
-            <Route path="preview" element={<Preview />} />
+            <Route path="time-table" element={<TimeTable />} />
         </Routes>
       <Footer/>
     </div>

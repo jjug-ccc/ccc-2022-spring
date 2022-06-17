@@ -40,7 +40,7 @@ TableData.defaultProps = {
     rowSpan: 1
 };
 
-const Preview: React.FC = () => {
+const TimeTable: React.FC = () => {
     const [error, setError] = useState(null);
     const [trackA, setTrackA] = useState("");
     const [trackB, setTrackB] = useState("");
@@ -437,4 +437,4 @@ const Preview: React.FC = () => {
     )
 };
 
-export default Preview;
+export default TimeTable;
