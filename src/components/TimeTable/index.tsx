@@ -87,10 +87,10 @@ const TimeTable: React.FC = () => {
                                 </figure>
                             </div>
                         </div>
-                        <div className="column">
+                        <div className="column is-one-quarters">
                             <div className="content">
                                 <figure className="image is-9by16">
-                                    <iframe className="has-ratio" width="100%" height="100%"
+                                    <iframe className="has-ratio" width="360" height="640"
                                             src={'https://www.youtube.com/live_chat?v=' + trackCode + '&embed_domain=' + embedDomain}
                                             frameBorder="0" allowFullScreen title="chat"/>
                                 </figure>
