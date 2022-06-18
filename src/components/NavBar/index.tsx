@@ -30,7 +30,7 @@ const NavBar : React.FC = () => {
           </div>
           <div id="navbarBasic" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
               <div className="navbar-start">
-                  <Link className="navbar-item" to="/viewer">視聴</Link>
+                  <a className="navbar-item" href="https://ccc2022spring-viewer.java-users.jp" target="blank" rel="noopener">視聴</a>
               </div>
           </div>
       </nav>
