@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {faArrowCircleUp, faClock, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 type TableDataProps = {
@@ -8,6 +9,7 @@ type TableDataProps = {
     startTime?: string,
     endTime?: string,
     rowSpan?: number,
+    hashTag?: string,
 }
 
 const TableData : React.FC<TableDataProps> = (props) => {
@@ -27,9 +29,11 @@ const TableData : React.FC<TableDataProps> = (props) => {
         );
     }
 
+    const twitter = "ccc_" + props.hashTag;
     return (
         <td rowSpan={props.rowSpan}>
             <i><FontAwesomeIcon icon={faClock} size="sm"/></i> <span className="fw-lighter small">{props.startTime}〜{props.endTime}</span><br/>
+            <i><FontAwesomeIcon icon={faTwitter} size="sm"/></i> <a href={'https://twitter.com/search?q=%23' + twitter} target="_blank" rel="noopener noreferrer">#{twitter}</a><br/>
             <a href={'https://fortee.jp/jjug-ccc-2022-spring/proposal/' + props.proposalId} target="_blank" rel="noopener noreferrer">
                 <span className="small">{props.title}</span>
             </a>
@@ -80,22 +84,18 @@ const TimeTable: React.FC = () => {
                 <div className="container">
                     <div className="columns">
                         <div className="column is-three-quarters">
-                            <div className="content">
-                                <figure className="image is-16by9">
-                                    <iframe className="has-ratio" src={'https://www.youtube.com/embed/' + trackCode}
-                                            width="640" height="360"
-                                            frameBorder="0" allowFullScreen title="player"/>
-                                </figure>
-                            </div>
+                            <figure className="image is-16by9">
+                                <iframe className="has-ratio" src={'https://www.youtube.com/embed/' + trackCode}
+                                        width="640" height="360"
+                                        frameBorder="0" allowFullScreen title="player"/>
+                            </figure>
                         </div>
                         <div className="column is-one-quarters">
-                            <div className="content">
-                                <figure className="image is-9by16">
-                                    <iframe className="has-ratio" width="360" height="640"
-                                            src={'https://www.youtube.com/live_chat?v=' + trackCode + '&embed_domain=' + embedDomain}
-                                            frameBorder="0" allowFullScreen title="chat"/>
-                                </figure>
-                            </div>
+                            <figure className="image is-9by16">
+                                <iframe className="has-ratio" width="360" height="640"
+                                        src={'https://www.youtube.com/live_chat?v=' + trackCode + '&embed_domain=' + embedDomain}
+                                        frameBorder="0" allowFullScreen title="chat"/>
+                            </figure>
                         </div>
                     </div>
                     <div className="columns">
@@ -170,18 +170,21 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'c966194c-c7d5-43c2-a65e-5d8f4ac94cf2'}
                                                 startTime={'10:00'}
                                                 endTime={'10:25'}
+                                                hashTag={'a1'}
                                             />
                                             <TableData
                                                 title={'AWS Batch × Spring Batch でクラウド最適なバッチを構築した話'}
                                                 proposalId={'fbb1e886-d51a-4052-b284-6e9c80f132ea'}
                                                 startTime={'10:00'}
                                                 endTime={'10:25'}
+                                                hashTag={'b1'}
                                             />
                                             <TableData
                                                 title={'開発者にやさしく、柔軟性、安全性を高めたGithub ActionsベースのCI/CDを構築する'}
                                                 proposalId={'153b87bf-85c4-4274-9954-4e3f614724cb'}
                                                 startTime={'10:00'}
                                                 endTime={'10:25'}
+                                                hashTag={'c1'}
                                             />
                                             <TableData
                                                 title={'サービス開発の理想と現実・短納期でローンチした新サービスをJavaで開発した話'}
@@ -189,6 +192,7 @@ const TimeTable: React.FC = () => {
                                                 startTime={'10:00'}
                                                 endTime={'10:50'}
                                                 rowSpan={2}
+                                                hashTag={'d1'}
                                             />
                                         </tr>
                                         <tr>
@@ -197,18 +201,21 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'83759ca2-1230-413f-817f-3a9d99fc8e2a'}
                                                 startTime={'10:25'}
                                                 endTime={'10:50'}
+                                                hashTag={'a2'}
                                             />
                                             <TableData
                                                 title={'Spring Boot と WebRTC を用いた Web 会議システムの開発'}
                                                 proposalId={'afd5d809-a47b-4932-b31d-aebab30c2e29'}
                                                 startTime={'10:25'}
                                                 endTime={'10:50'}
+                                                hashTag={'b2'}
                                             />
                                             <TableData
                                                 title={'Java で作るカスタム GitHub Actions'}
                                                 proposalId={'0c85f6b2-d44d-40c2-8e6d-ddc1fe821273'}
                                                 startTime={'10:25'}
                                                 endTime={'10:50'}
+                                                hashTag={'c2'}
                                             />
                                         </tr>
                                         <tr>
@@ -223,24 +230,28 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'f62f3b34-2318-4a1a-adec-ea7ed35825e1'}
                                                 startTime={'11:00'}
                                                 endTime={'11:50'}
+                                                hashTag={'a3'}
                                             />
                                             <TableData
                                                 title={'クレジットカード決済システムをJavaで構築して10年間運用した話'}
                                                 proposalId={'dc6c1fa2-9b64-4cdb-a602-30d535c9849f'}
                                                 startTime={'11:00'}
                                                 endTime={'11:50'}
+                                                hashTag={'b3'}
                                             />
                                             <TableData
                                                 title={'k8s 疲れの方へ送る、k8s ベースのらくらくマイクロサービス動作基盤のご紹介〜 Dapr ベースのマイクロサービス開発から GitHub Action を利用した CI/CD 〜'}
                                                 proposalId={'620b5a5a-ced8-417d-bd0f-c1a68baa3c97'}
                                                 startTime={'11:00'}
                                                 endTime={'11:50'}
+                                                hashTag={'c3'}
                                             />
                                             <TableData
                                                 title={'「サポート」は製品開発？　- JDBCライブラリ屋さんが実践する攻めのテクニカルサポートとJavaエンジニアのキャリアについて -'}
                                                 proposalId={'6964800f-b92c-47a6-b161-d6bf8884b02c'}
                                                 startTime={'11:00'}
                                                 endTime={'11:50'}
+                                                hashTag={'d2'}
                                             />
                                         </tr>
                                         <tr>
@@ -256,12 +267,14 @@ const TimeTable: React.FC = () => {
                                                 startTime={'12:30'}
                                                 endTime={'13:20'}
                                                 rowSpan={2}
+                                                hashTag={'a4'}
                                             />
                                             <TableData
                                                 title={'ライブコーディングで学ぶKotlinチュートリアル'}
                                                 proposalId={'4177bd7c-c165-4890-9264-0b66d28ba81c'}
                                                 startTime={'12:30'}
                                                 endTime={'12:55'}
+                                                hashTag={'b4'}
                                             />
                                             <TableData
                                                 title={'Java初心者が知っておくべきプログラミングのこと'}
@@ -269,6 +282,7 @@ const TimeTable: React.FC = () => {
                                                 startTime={'12:30'}
                                                 endTime={'13:20'}
                                                 rowSpan={2}
+                                                hashTag={'c4'}
                                             />
                                             <TableData
                                                 title={'Lauchableで僕が学んだ働き方 〜リモートワークで会社もプロダクトも１から作る経験〜'}
@@ -276,6 +290,7 @@ const TimeTable: React.FC = () => {
                                                 startTime={'12:30'}
                                                 endTime={'13:20'}
                                                 rowSpan={2}
+                                                hashTag={'d3'}
                                             />
                                         </tr>
                                         <tr>
@@ -284,6 +299,7 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'355ae050-d7e6-494b-b7a6-c30a4f42d97b'}
                                                 startTime={'12:55'}
                                                 endTime={'13:20'}
+                                                hashTag={'b5'}
                                             />
                                         </tr>
                                         <tr>
@@ -298,24 +314,28 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'7583d339-9e53-4726-9ecd-617e43c540ef'}
                                                 startTime={'13:30'}
                                                 endTime={'14:20'}
+                                                hashTag={'a5'}
                                             />
                                             <TableData
                                                 title={'分散データベースTiDB Cloudで構築するWebアプリケーション'}
                                                 proposalId={'c92a5edb-8cb0-4355-98f5-44fc6acad5b6'}
                                                 startTime={'13:30'}
                                                 endTime={'14:20'}
+                                                hashTag={'b6'}
                                             />
                                             <TableData
                                                 title={'Azure Pipelinesを使って学んだ CI/CD環境のあれこれ'}
                                                 proposalId={'ebb99b9d-75dc-4816-a321-00e98602d78a'}
                                                 startTime={'13:30'}
                                                 endTime={'14:20'}
+                                                hashTag={'c5'}
                                             />
                                             <TableData
                                                 title={'保険基幹システムのアーキテクチャ : シンプレクスの技術的チャレンジ'}
                                                 proposalId={'8d2025e5-ce24-4d5f-8157-76d8c652a8a7'}
                                                 startTime={'13:30'}
                                                 endTime={'14:20'}
+                                                hashTag={'d4'}
                                             />
                                         </tr>
                                         <tr>
@@ -331,6 +351,7 @@ const TimeTable: React.FC = () => {
                                                 startTime={'15:00'}
                                                 endTime={'15:50'}
                                                 rowSpan={2}
+                                                hashTag={'a6'}
                                             />
                                             <TableData
                                                 title={'JUnit5.7, 5.8の新機能紹介'}
@@ -338,6 +359,7 @@ const TimeTable: React.FC = () => {
                                                 startTime={'15:00'}
                                                 endTime={'15:50'}
                                                 rowSpan={2}
+                                                hashTag={'b7'}
                                             />
                                             <TableData
                                                 title={'RDRA + JavaによるレジャーSaaSプロダクトの要件定義と実装のシームレスな接続'}
@@ -345,12 +367,14 @@ const TimeTable: React.FC = () => {
                                                 startTime={'15:00'}
                                                 endTime={'15:50'}
                                                 rowSpan={2}
+                                                hashTag={'c6'}
                                             />
                                             <TableData
                                                 title={'脱二重メンテナンス！ドキュメント自動生成への道'}
                                                 proposalId={'e60f67fe-a543-457d-adfc-75354b677dc9'}
                                                 startTime={'15:00'}
                                                 endTime={'15:25'}
+                                                hashTag={'d5'}
                                             />
                                         </tr>
                                         <tr>
@@ -359,6 +383,7 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'78f6603d-eeea-4066-afdd-fc605bdd358e'}
                                                 startTime={'15:25'}
                                                 endTime={'15:50'}
+                                                hashTag={'d6'}
                                             />
                                         </tr>
                                         <tr>
@@ -373,24 +398,28 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'ed94e838-99c6-479b-95de-2f9eec4217b3'}
                                                 startTime={'16:00'}
                                                 endTime={'16:50'}
+                                                hashTag={'a7'}
                                             />
                                             <TableData
                                                 title={'LINEのB2Bプラットフォームにおけるトラブルシューティング２選'}
                                                 proposalId={'730d46e2-a295-45c2-abfa-bb7bf13ad7c9'}
                                                 startTime={'16:00'}
                                                 endTime={'16:50'}
+                                                hashTag={'b8'}
                                             />
                                             <TableData
                                                 title={'連続画像処理による位置情報計算を支えるマイクロサービスアーキテクチャ'}
                                                 proposalId={'e74451d7-1b81-4248-a772-b5250f2743d8'}
                                                 startTime={'16:00'}
                                                 endTime={'16:50'}
+                                                hashTag={'c7'}
                                             />
                                             <TableData
                                                 title={'スナップショットログを用いた自動E2Eテストの導入'}
                                                 proposalId={'8f069afd-0230-404e-ab5e-23d04437597c'}
                                                 startTime={'16:00'}
                                                 endTime={'16:50'}
+                                                hashTag={'d7'}
                                             />
                                         </tr>
                                         <tr>
@@ -405,18 +434,21 @@ const TimeTable: React.FC = () => {
                                                 proposalId={'38436423-2235-4736-8ca5-783c8f227ea1'}
                                                 startTime={'17:00'}
                                                 endTime={'17:50'}
+                                                hashTag={'a8'}
                                             />
                                             <TableData
                                                 title={'テストコードの注入から始めるレガシーコードのリファクタリング'}
                                                 proposalId={'6631cbfb-8e73-4517-a3ff-23a9766546c9'}
                                                 startTime={'17:00'}
                                                 endTime={'17:50'}
+                                                hashTag={'b9'}
                                             />
                                             <TableData
                                                 title={'イベントソーシング入門 in Java――イベントストーミングから Akka persistence を使った CQRS+ES 実装まで'}
                                                 proposalId={'feef52a6-36a5-413f-a04c-5be783c635d7'}
                                                 startTime={'17:00'}
                                                 endTime={'17:50'}
+                                                hashTag={'c8'}
                                             />
                                             <TableData
                                                 title={'JJUGセッション'}
