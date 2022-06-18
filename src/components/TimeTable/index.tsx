@@ -83,6 +83,7 @@ const TimeTable: React.FC = () => {
                             <div className="content">
                                 <figure className="image is-16by9">
                                     <iframe className="has-ratio" src={'https://www.youtube.com/embed/' + trackCode}
+                                            width="640" height="360"
                                             frameBorder="0" allowFullScreen title="player"/>
                                 </figure>
                             </div>
